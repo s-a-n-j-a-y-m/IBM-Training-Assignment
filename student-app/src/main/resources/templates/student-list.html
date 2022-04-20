@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <title>SMS</title>
+</head>
+<body>
+<h1> Student Management System</h1>
+<hr/>
+<a th:href="@{/students/showFormForAdd}"
+	class="fas fa-user-plus btn btn-info btn-sm">
+	Add Student
+</a>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="student : ${students}">
+    <td th:text="${student.firstName}" />
+    <td th:text="${student.lastName}" />
+    <td th:text="${student.email}" />
+    <td>
+    <a th:href="@{/students/showFormForUpdate(id=${student.id})}"
+    class="btn btn-info btn-sm">
+    Show Details
+    </a>
+    <a th:href="@{/students/showFormForUpdate(id=${student.id})}"
+    class="fas fa-user-edit btn btn-warning btn-sm">
+    Update
+    </a>
+    <a th:href="@{/students/delete(id=${student.id})}"
+    class="fas fa-user-times btn btn-danger btn-sm"
+    onclick="if(!(confirm('Are you sure you want to delete this student?'))) return false">
+    Delete
+    </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
