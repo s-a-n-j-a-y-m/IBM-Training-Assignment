@@ -3,13 +3,6 @@ server:
 spring:
   application:
     name: item-ws
-  boot:
-    admin:
-      client:
-        url:
-        - http://admin:admin@localhost:8761/admin
-  zipkin:
-    base-url: http://localhost:9411
   h2:
     console:
       enabled: true
@@ -20,21 +13,21 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: jdbc:mysql://localhost:3315/hr
+    url: jdbc:mysql://localhost:3306/hr
     username: root
-    password: sanjay1304
-eureka:
-  client:
-    service-url:
-      defaultZone: http://admin:admin@localhost:8761/eureka
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    password: root
+  cloud:
+    config:
+      uri:
+      - http://localhost:9999
+      enabled: false
 management:
   endpoints:
     web:
       exposure:
         include:
-        - '*'   
+        - '*'  
+eureka:
+  instance:
+    instance-id: "${spring.application.name}:${spring.application.instance_id:${random.value}}"
+    prefer-ip-address: true
