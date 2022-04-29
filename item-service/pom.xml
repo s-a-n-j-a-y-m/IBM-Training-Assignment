@@ -1,33 +1,3 @@
-Skip to content
-Product 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-Sign in
-Sign up
-dnilay
-/
-ibmfsd2-March-28th-22
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-ibmfsd2-March-28th-22/item-service/pom.xml
-@dnilay
-dnilay Add files via upload
-Latest commit 74af789 7 hours ago
- History
- 1 contributor
-124 lines (121 sloc)  3.8 KB
-   
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
